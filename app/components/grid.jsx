@@ -25,7 +25,7 @@ const Grid = ({ columns, rows, color }) => {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center',  marginLeft: 'auto', marginRight: 'auto' }}>
+    <View style={{ flex: 1, justifyContent: 'center', left:12,  marginLeft: 'auto', marginRight: 'auto' }}>
       <Svg width={screenWidth} height={screenHeight / 2}>
         {renderGrid()}
       </Svg>
@@ -34,3 +34,18 @@ const Grid = ({ columns, rows, color }) => {
 };
 
 export default Grid;
+
+
+
+// for (var i = 0; i < length; i++) {
+//     for (var j = 0; j < length2; j++) {
+//         var x = points[i][j][0];
+//         var y = points[i][j][1];
+//     };
+// };
+// for (var i = 0; i < length2; i++) {
+//     for (var j = 0; j < length; j++) {
+//         var x = points[i][j][0] ;
+//         var y = points[i][j][1] ;
+//     };
+// };
