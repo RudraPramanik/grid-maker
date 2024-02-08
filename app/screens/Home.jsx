@@ -1,11 +1,24 @@
 
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
-import Grid from '../components/grid';
-
+import { View, TextInput, Button, StyleSheet } from 'react-native';
+import Grid from '../components/Grid';
 
 
 const Home = () => {
+  const [columns, setColumns] = useState('');
+  const [rows, setRows] = useState('');
+  const [color, setColor] = useState('');
+
+
+  const handleSubmit = () => {
+    //string to integer
+    const numColumns = parseInt(columnsValue);
+    const numRows = parseInt(rowsValue);
+    
+        setColumns(numColumns);
+      setRows(numRows);
+   
+  };
 
   return (
     <View style={styles.container}>
@@ -13,19 +26,21 @@ const Home = () => {
       <TextInput
         style={styles.input}
         placeholder="Enter number of columns"
-        value=""
+        value={columnsValue}
+          onChangeText={handleColumnsChange}
         keyboardType="numeric"
       />
       <TextInput
         style={styles.input}
         placeholder="Enter number of rows"
-        value=""
+        value={rowsValue}
+        onChangeText={handleRowsChange}
         keyboardType="numeric"
       />
-      <TouchableOpacity>submit</TouchableOpacity>
+      <Button title="Submit" onPress={handleSubmit} />
       </View>
       <View style={styles.gridContainer}>
-        <Grid/>
+        <Grid columns={columns} rows={rows} color={color} />
       </View>
     </View>
   );
@@ -55,8 +70,15 @@ const styles = StyleSheet.create({
     borderRadius:10,
     width: '100%',
   },
-
+  colorSelector: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
  
+  row: {
+    flexDirection: 'row',
+  },
 });
 
 export default Home;
