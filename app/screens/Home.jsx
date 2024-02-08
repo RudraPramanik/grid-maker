@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
-import Grid from '../components/grid';
+import Grid from '../components/Grid';
+
+
 
 const Home = () => {
   const [columnsValue, setColumnsValue] = useState('');
