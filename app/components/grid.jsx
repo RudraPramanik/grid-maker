@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const grid = () => {
+const Grid = () => {
   return (
     <View>
       <Text>grid</Text>
@@ -9,6 +9,6 @@ const grid = () => {
   )
 }
 
-export default grid
+export default Grid
 
 const styles = StyleSheet.create({})
