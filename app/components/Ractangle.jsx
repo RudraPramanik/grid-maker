@@ -1,14 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { Rect } from 'react-native-svg';
 
-const Ractangle = () => {
-  return (
-    <View>
-      <Text>Ractangle</Text>
-    </View>
-  )
-}
+const Rectangle = ({ i, j, cellSize, color }) => (
+  <Rect
+    key={`${i}-${j}`}
+    x={j * cellSize}
+    y={i * cellSize}
+    width={cellSize}
+    height={cellSize}
+    fill={color}
+    stroke="black"
+    strokeWidth="1"
+  />
+);
 
-export default Ractangle
-
-const styles = StyleSheet.create({})
+export default Rectangle;
