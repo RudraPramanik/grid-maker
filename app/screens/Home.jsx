@@ -55,6 +55,11 @@ const Home = () => {
           onChangeText={handleRowsChange}
           keyboardType="numeric"
         />
+          <View style={styles.buttonContainer} >
+          <TouchableOpacity onPress={handleSubmit} style={styles.button}>
+            <Text style={styles.submitButtonText}>Submit</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.colorSelector}>
           <TouchableOpacity
             onPress={() => setColor("white")}
@@ -82,11 +87,7 @@ const Home = () => {
             <Text style={styles.submitButtonText}>PURPLE</Text>
           </TouchableOpacity>
         </View>
-        <View>
-          <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-            <Text style={styles.submitButtonText}>Submit</Text>
-          </TouchableOpacity>
-        </View>
+      
       </View>
       <View style={styles.gridContainer}>
         <Grid columns={columns} rows={rows} color={color} />
@@ -140,6 +141,9 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 18,
     fontWeight: "bold",
+  },
+  buttonContainer:{
+    marginVertical:8,
   },
 });
 
