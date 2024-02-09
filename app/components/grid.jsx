@@ -4,10 +4,8 @@ import Svg, { Rect } from 'react-native-svg';
 import Rectangle from './Ractangle';
 
 const Grid = ({ columns, rows, color }) => {
-  // Get the dimensions of the screen
   const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
   
-  // Calculate the cell size based on the dimensions of the screen and the number of rows/columns
   const cellSize = Math.min((screenWidth * 0.8) / (columns), screenHeight / (rows * 2));
 
   const renderGrid = () => {
